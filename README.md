@@ -238,7 +238,7 @@ Below are some screen shots showing database set up, WEB UI of the RAG applicati
    ```
    ![rail speed chunk2](static/img/query-validation2-inpostgres.png)
 
-   Tese two screen shots are evidence that the responses from RAG application were indeed retrieved from our local knowledge base, and it was not part of the general answers from the LLM model itself.
+   These two screen shots are evidence that the responses from RAG application were indeed retrieved from our local knowledge base, and it was not part of the general answers from the LLM model itself.
 
 ## License
 
@@ -247,8 +247,8 @@ This project is licensed under the MIT License.
 ## Resources
 
 - [what is RAG](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
-- [GitHub Repository](https://github.com/nyang64/your-repo) ()
-- [Documentation Wiki](https://github.com/your-username/your-repo/wiki)
+- [GitHub Repository](https://github.com/nyang64/my-rag)
+- [Documentation Wiki](https://github.com/nyang64/my-rag/README.md)
 - [open router](https://openrouter.ai/)
 - [scrapy/spider settings](https://docs.scrapy.org/en/latest/topics/settings.html)
 - [Issue](mailto://nyang63@gmail.com)  email nyang63@gmail.om
