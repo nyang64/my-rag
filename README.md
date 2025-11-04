@@ -101,7 +101,10 @@ I have everything set up on my macbook, if you are a windows user, please find t
 
 - __LLM model/Database interaction__: `.env` 
    ```
-   PGVECTOR_DB_URL=postgresql://myuser:mypassword@localhost:5432/myprojdb OPENROUTER_API_KEY=sk-or-v1-7256xxxxxx DEEPSEEK_FREE_MODEL=deepseek/deepseek-chat-v3.1:free TOKENIZERS_PARALLELISM=false
+   PGVECTOR_DB_URL=postgresql://myuser:mypassword@localhost:5432/myprojdb
+   OPENROUTER_API_KEY=sk-or-v1-7256xxxxxx (use your own open router api key here)
+   DEEPSEEK_FREE_MODEL=deepseek/deepseek-chat-v3.1:free
+   TOKENIZERS_PARALLELISM=false
    ```
 - __Scraper/Spider Configuration__: settings.py
 - __Dependencies__: `requirements.txt` 
