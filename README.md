@@ -247,8 +247,9 @@ This project is licensed under the MIT License.
 ## Resources
 
 - [what is RAG](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
-- [GitHub Repository](https://github.com/nyang64/my-rag)
-- [Documentation Wiki](https://github.com/nyang64/my-rag/README.md)
 - [open router](https://openrouter.ai/)
 - [scrapy/spider settings](https://docs.scrapy.org/en/latest/topics/settings.html)
+- [Fast API](https://fastapi.tiangolo.com/)
+- [This Repository](https://github.com/nyang64/my-rag)
+- [Documentation/README](https://github.com/nyang64/my-rag/README.md)
 - [Issue](mailto://nyang63@gmail.com)  email nyang63@gmail.om
