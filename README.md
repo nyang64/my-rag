@@ -113,13 +113,6 @@ I have everything set up on my macbook, if you are a windows user, please find t
 
 I recommend setting up an account at https://openrouter.ai/ and get an API key (sk-or-v1-7256.....).  The benefit of having an openrouter account is that it supports all major LLM models without the need to register with different model vendors and have a separate API key with each.  One openrouter API key let you have access to any models you choose, and openrouter handles the billing and payment of your usage. There are free LLM models you can configure via openrouter, and you pay nothing if you chooose to use one of the free models. I have configured deepseek/deepseek-chat-v3.1:free for this project.
 
-### Environment (.env)
-
-PGVECTOR_DB_URL=postgresql://myuser:mypassword@localhost:5432/myprojdb
-OPENROUTER_API_KEY=sk-or-v1-7256xxxxxx
-DEEPSEEK_FREE_MODEL=deepseek/deepseek-chat-v3.1:free
-TOKENIZERS_PARALLELISM=false
-
 ### Application Installation
 
 1. __Navigate to project directory__:
