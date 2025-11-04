@@ -174,7 +174,7 @@ TOKENIZERS_PARALLELISM=false
 
    v1 <=> v2 is defined as:
    ```
-   $$\text{cosine\_distance}(v_1, v_2) = 1 - \cos(\theta) = 1 - \frac{v_1 \cdot v_2}{\|v_1\| \|v_2\|}$$
+   $$\text{cosineDistance}(v_1, v_2) = 1 - \cos(\theta) = 1 - \frac{v_1 \cdot v_2}{\|v_1\| \|v_2\|}$$
    ```
    Range: [0, 2]
    0 = perfect match (cos(θ) = 1)
