@@ -7,6 +7,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from openai import RateLimitError
 from dotenv import load_dotenv
+import re
 
 # --- Reuse your RAG chain ---
 from scraper.raq_query import rag_chain, invoke_with_retry, retrieve_top3
@@ -23,24 +24,29 @@ async def home():
     with open("static/index.html", "r", encoding="utf-8") as f:
         return f.read()
 
+def clean_response(text: str) -> str:
+    """Remove DeepSeek control tokens and extra whitespace."""
+    # Remove <｜begin▁of▁sentence｜>, <｜end▁of▁sentence｜>, etc.
+    text = re.sub(r"<｜[^｜]+｜>", "", text)
+    # Collapse multiple newlines
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    # Strip leading/trailing whitespace
+    return text.strip()
+
 @app.post("/ask")
 async def ask(query: str = Form(...)):
     async def stream_answer():
         try:
-            # Get answer
-            answer = invoke_with_retry(rag_chain, query)
-
-            # Get source docs
-            #result = rag_chain.invoke({"question": query})
-            #docs = result.get("context", [])
+            answer = clean_response(invoke_with_retry(rag_chain, query))
             docs = retrieve_top3(query)
-            sources = "<br>".join([
-                   f"<a href='{d.metadata['url']}' target='_blank'>{d.metadata.get('title', 'Page')}</a>"
-                   for d in docs
+
+            # ← Use \n (not <br>) — JS will convert
+            sources = "\n".join([
+                f"<a href='{d.metadata['url']}' target='_blank'>{d.metadata.get('title', 'Page')}</a>"
+                for d in docs
             ]) if docs else "No sources."
-            #docs = retrieved if isinstance(retrieved, list) else []
-            
-            full = f"{answer}<br>Sources:<br>{sources}"
+
+            full = f"{answer}\n\nSources:\n{sources}"
             for char in full:
                 yield char
                 await asyncio.sleep(0.01)
@@ -48,7 +54,7 @@ async def ask(query: str = Form(...)):
         except RateLimitError:
             yield "Rate limited. Retrying..."
             await asyncio.sleep(2)
-            async for char in ask(query):
+            async for char in stream_answer():
                 yield char
         except Exception as e:
             yield f"Error: {str(e)}"
