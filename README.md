@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a compplete RAG (Retrieval-Augmented Generation) application with web scraping capabilities, embedding processing and storage, and query functionality. The Web UI is a convenient interface for user to enter queries to the RAG application. Of course, the questions shall be specifically related to the contents you scraped off the web, otherwise, there is no point of having a RAG application; You can just qeury llm directly.
+This repository contains a complete RAG (Retrieval-Augmented Generation) application with web scraping capabilities, embedding processing and storage, and query functionality. The Web UI is a convenient interface for user to enter queries to the RAG application. Of course, the questions shall be specifically related to the contents you scraped off the web, otherwise, there is no point of having a RAG application; You can just qeury llm directly.
 
 ## Key Features
 
@@ -17,12 +17,12 @@ This repository contains a compplete RAG (Retrieval-Augmented Generation) applic
 ```javascript
 ${basedir}/scraper/
 ├── .env                    # Environment configuration file
-├── query_china_tollroads.py # Test vector query
-├── requirements.txt       # Python dependencies
-├── web_app.py            # Main web application
-├── env/                  # Virtual environment
-├── scraper/              # Core scraping functionality
-└── static/              # Web server static files
+├── adhoc_query.py          # Test vector query
+├── requirements.txt        # Python dependencies
+├── web_app.py              # Main web application
+├── env/                    # Virtual environment
+├── scraper/                # Core scraping functionality
+└── static/                 # Web server static files
 ```
 
 ## Getting Started
