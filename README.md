@@ -124,9 +124,8 @@ I recommend setting up an account at https://openrouter.ai/ and get an API key (
 2. __Set up virtual environment__:
    ```bash
    python -m venv env
-   pip install -r requirements.txt
-
    source env/bin/activate
+   pip install -r requirements.txt
    ```
 
 ### Running the Application
